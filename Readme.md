@@ -85,7 +85,7 @@ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
 docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
 ```
 
-### SSL certificates
+### Audio conversion (macOS)
 ```bash
 say -o speech.aiff "Create a new list called shopping"
 ffmpeg -i speech.aiff -acodec libmp3lame -q:a 2 input.mp3
@@ -95,4 +95,5 @@ rm speech.aiff
 ---
 
 ## 📚 Legacy Version
+
 Previous voice API implementation: [echo-voiceapi](https://github.com/fady17/echo-voiceapi/tree/dev)
