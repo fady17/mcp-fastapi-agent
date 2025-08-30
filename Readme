@@ -1,6 +1,10 @@
+Here’s a cleaned and properly formatted Markdown version of your setup guide:
+
 # AI Agent with MCP Integration
 
-> **⚠️ Note:** Docker setup is available but not recommended. Follow manual setup below.
+> **⚠️ Note:** Docker setup is available but **not recommended**. Follow manual setup below.
+
+---
 
 ## 📋 Prerequisites
 
@@ -9,11 +13,13 @@
 - Node.js and npm
 - Python 3.8+
 
+---
+
 ## 🚀 Quick Start
 
 ### 1. Environment Setup
 
-Create `.env` in the `todo-list` directory:
+Create a `.env` file inside the `todo-list` directory:
 
 ```bash
 # PostgreSQL Settings
@@ -23,76 +29,86 @@ POSTGRES_DB=todo_db
 
 # Docker Host IP
 DOCKER_HOST_IP=host.docker.internal
+
+# LiveKit Keys
 LIVEKIT_API_KEY=devkey
 LIVEKIT_API_SECRET=secret
-```
 
-### 2. Start Services
 
-Run these commands in **separate terminals**:
+⸻
 
-**Terminal 1: LiveKit server**
-```bash
+2. Start Services
+
+Run these commands in separate terminals:
+
+Terminal 1: LiveKit Server
+
 livekit-server --dev
-```
 
-**Terminal 2: Infrastructure (database)**
-```bash
+Terminal 2: Infrastructure (database)
+
 docker compose -f compose.infra.yml up --build
-```
 
-**Terminal 3: Backend API**
-```bash
+Terminal 3: Backend API
+
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-```
 
-**Terminal 4: Frontend**
-```bash
+Terminal 4: Frontend
+
 cd frontend
 npm install
 npm run dev
-```
 
-### 3. Access Application
+
+⸻
+
+3. Access Application
 
 Open browser: http://localhost:5173
 
-## 🛠️ Technology Stack
+⸻
 
-| Component | Technology |
-|-----------|------------|
-| **Backend** | Python/FastAPI |
-| **Frontend** | React/TypeScript/Vite |
-| **Database** | PostgreSQL |
-| **Real-Time** | WebRTC with LiveKit |
-| **AI** | LM Studio |
-| **Containers** | Docker/Docker Compose |
+🛠️ Technology Stack
 
-## 🔧 Development Commands
+Component	Technology
+Backend	Python / FastAPI
+Frontend	React / TypeScript / Vite
+Database	PostgreSQL
+Real-Time	WebRTC with LiveKit
+AI	LM Studio
+Containers	Docker / Docker Compose
 
-### Database migrations
-```bash
+
+⸻
+
+🔧 Development Commands
+
+Database Migrations
+
 alembic revision --autogenerate -m "Create initial todo_lists and todo_items tables"
 alembic upgrade head
-```
 
-### Docker operations
-```bash
+Docker Operations
+
 # Start with dev overrides
 docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
 
 # Stop and remove
 docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
-```
 
-### SSL certificates
-```bash
+SSL Certificates
+
 say -o speech.aiff "Create a new list called shopping"
 ffmpeg -i speech.aiff -acodec libmp3lame -q:a 2 input.mp3
 rm speech.aiff
-```
+
+
+⸻
+
+📚 Legacy Version
+
+Previous voice API implementation: echo-voiceapi (dev branch)
 
 ---
 
-## 📚 Legacy Version
-Previous voice API implementation: [echo-voiceapi](https://github.com/fady17/echo-voiceapi/tree/dev)
+Do you want me to also make a **simplified "copy-paste friendly" version** (without notes, emojis, and tables) for quick setup scripts, or do you prefer keeping this styled developer guide only?
