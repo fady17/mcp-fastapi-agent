@@ -96,4 +96,4 @@ rm speech.aiff
 
 ## 📚 Legacy Version
 
-Previous voice API implementation: [echo-voiceapi](https://github.com/fady17/echo-voiceapi/tree/dev)
+Previous voice API implementation: [echo-voiceapi](https://github.com/fady17/echo-voiceapi/)
