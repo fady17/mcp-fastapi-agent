@@ -109,6 +109,3 @@ rm speech.aiff
 
 Previous voice API implementation: echo-voiceapi (dev branch)
 
----
-
-Do you want me to also make a **simplified "copy-paste friendly" version** (without notes, emojis, and tables) for quick setup scripts, or do you prefer keeping this styled developer guide only?
